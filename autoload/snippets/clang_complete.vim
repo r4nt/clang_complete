@@ -18,8 +18,10 @@ function! snippets#clang_complete#init()
 endfunction
 
 function! s:UpdateConcealSyntax()
-  syntax match Conceal /<#/ conceal
-  syntax match Conceal /#>/ conceal
+  if has("conceal")
+    syntax match Conceal /<#/ conceal
+    syntax match Conceal /#>/ conceal
+  endif
 endfunction
 
 " fullname = strcat(char *dest, const char *src)
