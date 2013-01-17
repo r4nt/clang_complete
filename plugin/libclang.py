@@ -77,7 +77,7 @@ def initClangComplete(clang_complete_flags, clang_compilation_database, \
   complete_flags = int(clang_complete_flags)
   global compilation_database
   if clang_compilation_database != '':
-    compilation_database = CompilationDatabase.fromDirectory(clang_compilation_database)
+    compilation_database = CompilationDatabase.fromDirectory(os.path.abspath(clang_compilation_database))
   else:
     compilation_database = None
   global libclangLock
